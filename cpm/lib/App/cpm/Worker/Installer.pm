@@ -213,6 +213,17 @@ sub fetch {
 
     chdir $dir or die;
 
+    if ( $self->{security_patches} ) {
+        use CPAN::Patches;
+	use Module::Path "module_path"; 
+        use File::Basename; 
+        my $patchdir = dirname module_path("CPANSec::Patches");
+        $patchdir .= '/../patches/';
+        print "PATCHING...\n";
+        my $patches  = CPAN::Patches->new( 'patch_set_locations' => [ $patchdir ] );
+        $patches->patch();
+    }
+
     my $meta = $self->_load_metafile($distfile, 'META.json', 'META.yml');
     if (!$meta) {
         $self->{logger}->log("Distribution does not have META.json nor META.yml");

@@ -57,6 +57,7 @@ sub new {
         with_test => 1,
         with_runtime => 1,
         with_develop => 0,
+        with_security_patches => 0,
         feature => [],
         notest => 1,
         prebuilt => $] >= 5.012 && $prebuilt,
@@ -111,6 +112,7 @@ sub parse_options {
         "with-all" => sub { map { $self->{"with_$_"} = 1 } @type, @phase },
         (map $with_option->($_), @type),
         (map $with_option->($_), @phase),
+        "with-security-patches!" => \($self->{security_patches}),
         "feature=s@" => \@feature,
         "show-build-log-on-failure" => \($self->{show_build_log_on_failure}),
     or return 0;
@@ -292,6 +294,7 @@ sub cmd_install {
         man_pages => $self->{man_pages},
         retry     => $self->{retry},
         prebuilt  => $self->{prebuilt},
+        security_patches  => $self->{security_patches},
         pureperl_only => $self->{pureperl_only},
         static_install => $self->{static_install},
         configure_timeout => $self->{configure_timeout},
