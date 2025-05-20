@@ -39,7 +39,7 @@ Characteristics:
 $ perl Makefile.PL
 $ make 
 $ make dist
-$ cpm --global CPANSec-Patches-0.01.tar.gz
+$ cpm install --global CPANSec-Patches-0.01.tar.gz
 ```
 
 ### Install with patches
