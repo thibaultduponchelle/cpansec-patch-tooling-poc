@@ -32,3 +32,24 @@ Characteristics:
 ## Resources
 - [Fixing a Perl module during CI workflow](https://briandfoy.github.io/fixing-a-perl-module-in-the-middle-of-a-github-workflow/)
 - [Tuto CPAN::Distroprefs](https://briandfoy.github.io/a-cpan-distroprefs-example/)
+
+## HOWTO
+### Install patches
+```
+$ perl Makefile.PL
+$ make 
+$ make dist
+$ cpm --global CPANSec-Patches-0.01.tar.gz
+```
+
+### Install with patches
+```
+$ rm ~/.perl-cpm/ -rf; cpm install Acme::LSD --with-security-patches --reinstall
+```
+
+### Run
+```
+$ perl -I local/lib/perl5/ -MAcme::LSD -e 'print "aAaAaAaAaAa" x100;'
+```
+
+
