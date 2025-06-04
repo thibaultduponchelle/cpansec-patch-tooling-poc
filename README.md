@@ -7,6 +7,7 @@ Notes:
 - Non-POC version should use [CPAN::Distroprefs](https://metacpan.org/pod/CPAN::Distroprefs) (not implemented)
 - Should be optional requirements in cpm (not implemented)
 - An example of patch - [CPANSec-Patches/lib/patches/acme-lsd/patches](CPANSec-Patches/lib/patches/acme-lsd/patches)
+- Patches should remain compatible out of CPAN installers (for distribution packagers to apply with their own tooling)
 
 ## CPAN::Distroprefs
 - distroprefs/
