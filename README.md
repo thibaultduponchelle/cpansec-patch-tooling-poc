@@ -29,6 +29,9 @@ Characteristics:
 - Not in core
 - Match module (no version)
 
+## Schema
+![CPANSec patch tooling POC](cpansec-patch-tooling-poc.png)
+
 ## Resources
 - [Fixing a Perl module during CI workflow](https://briandfoy.github.io/fixing-a-perl-module-in-the-middle-of-a-github-workflow/)
 - [Tuto CPAN::Distroprefs](https://briandfoy.github.io/a-cpan-distroprefs-example/)
