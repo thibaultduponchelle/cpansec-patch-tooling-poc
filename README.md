@@ -18,7 +18,7 @@ Notes:
 Characteristics:
 - In core
 - More flexibility (can match version or not)
-- ~~need to configure CPAN.pm~~
+- ~~Need to configure CPAN.pm~~
 - Not managing paching
 
 ## CPAN::Patches
