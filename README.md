@@ -56,7 +56,7 @@ Characteristics:
 
 With 1, maybe don't need intermediate tooling module.
 
-Speaking on CPAN::Patches:
+Speaking of CPAN::Patches:
 1. Flatten CPAN::Patches arborescence? (fixed by "new backend" idea)
 2. Make CPAN::Patches more more flexible in matching? (fixed by "new backend" idea)
 
