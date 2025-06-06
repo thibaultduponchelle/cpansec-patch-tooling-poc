@@ -32,12 +32,33 @@ Characteristics:
 - Not in core
 - Match module (no version)
 
+
+
 ## Schema
 ![CPANSec patch tooling POC](cpansec-patch-tooling-poc.png)
 
 ## Resources
 - [Fixing a Perl module during CI workflow](https://briandfoy.github.io/fixing-a-perl-module-in-the-middle-of-a-github-workflow/)
 - [Tuto CPAN::Distroprefs](https://briandfoy.github.io/a-cpan-distroprefs-example/)
+
+## Principles
+- Patches are distributed separately in one or multiple "database" module(s) (ala CPANSA-DB)
+- Patches compatibles in particular for usage out of CPAN installers (e.g. tooling from Linux distributions packagers) and between CPAN::Distroprefs and CPAN::Patches
+- Apply patches in CPAN installers is opt-in "--with-security-patches"
+- Technically, patching module and database module should remain an optional requirement in CPAN installers
+- Possible auto-update of database module
+- Code added to CPAN Installer remains as minimal as possible
+
+## Ideas
+0. Wrap CPAN::Distroprefs into an intermediate tooling to add patching facilities
+1. Move CPAN::Distroprefs patching from Distribution.pm to Distroprefs, then use CPAN::Distroprefs (directly or not) from CPAN Installers
+2. Add CPAN::Distroprefs as a backend of CPAN::Patches
+
+With 1, maybe don't need intermediate tooling module.
+
+Speaking on CPAN::Patches:
+1. Flatten CPAN::Patches arborescence? (fixed by "new backend" idea)
+2. Make CPAN::Patches more more flexible in matching? (fixed by "new backend" idea)
 
 ## HOWTO
 ### Install patches
